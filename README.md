@@ -29,3 +29,12 @@ This script calls the getUpdates function, which kinda checks for new messages. 
 
 Note: if you don’t send your Telegram bot a message, your results might be empty.
 - Copy and paste the chat ID into the script
+
+## Running the script
+
+- Replace the `TOKEN` and `chat_id` variables with your values gotten in the bot setup take
+- Specify which bitcoin address you want to listen to in the `whale_address`
+- Use `time_delay` to decide how often to check for an update (Note: notification will only be sent if there was a new block added)
+
+## TODO
+- Turn this into a web application to make the user-experience better and make the script available to non-tech users.
