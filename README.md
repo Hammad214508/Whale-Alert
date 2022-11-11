@@ -32,8 +32,9 @@ Note: if you don’t send your Telegram bot a message, your results might be emp
 ## Running the script
 
 - Replace the `TOKEN` and `chat_id` variables with your values gotten in the bot setup stage.
-- Specify which bitcoin address you want to listen to in the `whale_address`
-- Use `time_delay` to decide how often to check for an update in seconds (Note: notification will only be sent if there was a new block added)
+- Specify which bitcoin address you want to listen to in the `whale_address`.
+- Use `time_delay` to decide how often to check for an update in seconds (Note: notification will only be sent if there was a new block added).
+- Use(Replit)[https://replit.com/] to keep the script running.
 
 ## TODO
 - Turn this into a web application to make the user-experience better and make the script available to non-tech users.
