@@ -27,6 +27,6 @@ current_block = get_latest_block_price()[0]
 while(True):
     latest_block, transaction = get_latest_block_price()
     if (current_block != latest_block):
-        current_block = latest_blocks
+        current_block = latest_block
         send_message(transaction)
     time.sleep(time_delay)
