@@ -35,6 +35,10 @@ Note: if you don’t send your Telegram bot a message, your results might be emp
 - Specify which bitcoin address you want to listen to in the `whale_address`.
 - Use `time_delay` to decide how often to check for an update in seconds (Note: notification will only be sent if there was a new block added).
 - Use Replit [https://replit.com/] to keep the script running.
+- See the image below of an example notification:
+
+![Notification example](notification.png)
+
 
 ## TODO
 - Turn this into a web application to make the user-experience better and make the script available to non-tech users.

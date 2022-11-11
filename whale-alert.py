@@ -16,9 +16,10 @@ def get_latest_block_price():
     soup = BeautifulSoup(response.text, "html.parser")
     tr = soup.find(id="table_maina").find_next('tbody').find_next('tr')
     td_list = tr.find_all("td")
-    block = td_list[0].find_next('a').get_text()
+    block_number = td_list[0].find_next('a').get_text()
     amount = td_list[1].find_next('span').get_text()
-    return (block, amount)
+    price = td_list[4].get_text().split("@",1)[1]
+    return (block_number, amount + " at" + price)
 
 whale_address = "1LQoWist8KkaUXSPKZHNvEyfrEkPHzSsCd"
 time_delay = 300 # every 5 minutes
@@ -30,3 +31,4 @@ while(True):
         current_block = latest_block
         send_message(transaction)
     time.sleep(time_delay)
+    
