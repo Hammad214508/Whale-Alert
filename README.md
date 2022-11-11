@@ -1,5 +1,5 @@
 # Whale-Alert
-This script will enable to you track a crypto whale's activity by notifying you on telegram about any new transaction performed by their address.
+This script will enable you to track a crypto whale's activity by notifying you on telegram about any new transaction performed by their address.
 
 - It uses BotFather (A built-in Telegram bot that helps users create custom Telegram bots) to setup a bot to send messages.
 - BeautifulSoup to web-scrape information from BitInfoChart (website to retrieve a specific address' activity).
