@@ -37,7 +37,7 @@ Note: if you don’t send your Telegram bot a message, your results might be emp
 - Use Replit [https://replit.com/] to keep the script running.
 - See the image below of an example notification:
 
-![Notification example](img/notification.png)
+![Notification example](img/notification.png =250x)
 
 
 ## TODO
