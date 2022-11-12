@@ -31,4 +31,3 @@ while(True):
         current_block = latest_block
         send_message(transaction)
     time.sleep(time_delay)
-    
