@@ -1,11 +1,15 @@
 import requests
 import time
 from bs4 import BeautifulSoup
+import os
+
+TELEGRAM_TOKEN =  os.environ.get('TELEGRAM_TOKEN')
+TELEGRAM_CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID')
 
 def send_message(message):
     TOKEN = "Your token"
     chat_id = "Your chat id"
-    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage?chat_id={chat_id}&text={message}"
+    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage?chat_id={TELEGRAM_CHAT_ID}&text={message}"
     requests.get(url)
 
 def get_latest_block_price():

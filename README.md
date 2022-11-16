@@ -20,8 +20,8 @@ This script will enable you to track a crypto whale's activity by notifying you 
 - Run this Python script to find your chat ID;
 ```
 import requests
-TOKEN = "YOUR TELEGRAM BOT TOKEN"
-url = f"https://api.telegram.org/bot{TOKEN}/getUpdates"
+TELEGRAM_TOKEN = "YOUR TELEGRAM BOT TOKEN"
+url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/getUpdates"
 print(requests.get(url).json())
 ```
 
@@ -31,10 +31,9 @@ Note: if you don’t send your Telegram bot a message, your results might be emp
 
 ## Running the script
 
-- Replace the `TOKEN` and `chat_id` variables with your values gotten in the bot setup stage.
-- Specify which bitcoin address you want to listen to in the `whale_address`.
+- Replace the `TELEGRAM_TOKEN` and `TELEGRAM_CHAT_ID` variables with your values gotten in the bot setup stage. Best practice is to add them as environment variables in your .zshrc or .bashrc and use`os.environ.get()`.
+- Specify which bitcoin address you want to listen to in the `whale_address` variable.
 - Use `time_delay` to decide how often to check for an update in seconds (Note: notification will only be sent if there was a new block added).
-- Use Replit [https://replit.com/] to keep the script running.
 - See the image below of an example notification:
 
 [<img src="img/notification.png" width="250"/>](img/notification.png)
