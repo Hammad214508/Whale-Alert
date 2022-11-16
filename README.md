@@ -31,14 +31,14 @@ Note: if you don’t send your Telegram bot a message, your results might be emp
 
 ## Running the script
 
-- Replace the `TELEGRAM_TOKEN` and `TELEGRAM_CHAT_ID` variables with your values gotten in the bot setup stage. Best practice is to add them as environment variables in your .zshrc or .bashrc and use`os.environ.get()` in the code to read them.
+- Replace the `TELEGRAM_TOKEN` and `TELEGRAM_CHAT_ID` variables with your values gotten in the bot setup stage. Best practice is to add them as environment variables in your .zshrc or .bashrc and use `os.environ.get()` in the code to read them.
 - Specify which bitcoin address you want to listen to in the `BITCOIN_ADDRESS` variable.
-- Use `TIME_DELAY` to decide how often to check for an update in seconds, defaulted to every 10 minutes (Note: notification will only be sent if there was a new block added).
+- Use `TIME_DELAY` to decide how often to check for an update, defaulted to every 10 minutes (Note: notification will only be sent if there was a new transaction).
 - See the image below of an example notification:
 
 [<img src="img/notification.png" width="250"/>](img/notification.png)
 
 
 ## TODO
-- Add a cronjob instead of running the application constantly
+- Add a cronjob instead of running the application constantly.
 - Turn this into a web application to make the user-experience better and make the script available to non-tech users.
