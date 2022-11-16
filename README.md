@@ -30,7 +30,7 @@ This script calls the getUpdates function, which kinda checks for new messages. 
 Note: if you don’t send your Telegram bot a message, your results might be empty.
 
 ## Running the script
-
+- Run `pip3 install -r requirements.txt` in order to install all the python dependencies required for running this project.
 - Replace the `TELEGRAM_TOKEN` and `TELEGRAM_CHAT_ID` variables with your values gotten in the bot setup stage. Best practice is to add them as environment variables in your .zshrc or .bashrc and use `os.environ.get()` in the code to read them.
 - Specify which bitcoin address you want to listen to in the `BITCOIN_ADDRESS` variable.
 - Use `TIME_DELAY` to decide how often to check for an update, defaulted to every 10 minutes (Note: notification will only be sent if there was a new transaction).
