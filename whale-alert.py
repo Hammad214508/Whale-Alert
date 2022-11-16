@@ -1,6 +1,6 @@
 import os
-import requests
 import time
+import requests
 import re
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta, timezone
@@ -31,9 +31,9 @@ def webscrap_latest_transaction():
 
 TELEGRAM_TOKEN =  os.environ.get('TELEGRAM_TOKEN')
 TELEGRAM_CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID')
-BIT_INFO_CHARTS="https://bitinfocharts.com/bitcoin/address/"
+BIT_INFO_CHARTS = "https://bitinfocharts.com/bitcoin/address/"
 BITCOIN_ADDRESS = "1LQoWist8KkaUXSPKZHNvEyfrEkPHzSsCd"
-TIME_DELAY = 10*60 # every 10 minutes
+TIME_DELAY = 10 * 60 # every 10 minutes
 
 while(True):
     current_time = datetime.now()
