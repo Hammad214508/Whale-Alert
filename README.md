@@ -1,9 +1,18 @@
 # Whale-Alert
-This script will enable you to track a crypto whale's activity by notifying you on telegram about any new transaction performed by their address.
+This script will enable you to track a bitcoin whale's activity by notifying you on telegram about any new transaction performed by their address on real time.
 
 - It uses BotFather (A built-in Telegram bot that helps users create custom Telegram bots) to setup a bot to send messages.
-- BeautifulSoup to web-scrape information from BitInfoChart (website to retrieve a specific address' activity).
-- Runs every 10 minutes and checks whether a new block was added in the latest activity in order to send a notification on telegram.
+- Runs every 10 minutes and checks whether a new transaction was added in the latest activity in order to send a notification on telegram.
+- **Lite version**:
+  - Uses BeautifulSoup to web-scrape information from BitInfoChart (website to retrieve a specific address' activity).
+  - Might not be real time since it depends on when BitInfoChart updates their site.
+  - Needs to store the last transaction's ID to check whether a new one was added.
+- **Pro version**:
+  - Uses Blockchain Info API to get real time data for the address' activity on the blockchain.
+  - Uses Binance API to get the BTC price at that time.
+  - Can easily be used as a cronjob since it doesn't require to store any data, it sends notification based on the timestamp of the transaction.
+  - Will allow to track multiple addresses in a future release
+
 
 ## Setup telegram bot
 
@@ -40,5 +49,6 @@ Note: if you don’t send your Telegram bot a message, your results might be emp
 
 
 ## TODO
-- Add a cronjob instead of running the application constantly.
+- Allow tracking of multiple addresses.
+- Add cronjob instructions so doens't need to run the application constantly.
 - Turn this into a web application to make the user-experience better and make the script available to non-tech users.
