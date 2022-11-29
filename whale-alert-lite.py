@@ -15,19 +15,14 @@ def get_website():
     response = requests.get(url, headers=headers)
     return BeautifulSoup(response.text, "html.parser")
 
-def get_transaction_summary(transaction_data):
-    amount = transaction_data[1].find_next('span').get_text()
-    price = transaction_data[4].get_text().split("@",1)[1]
-    return (amount + " at" + price)
-
 def webscrap_latest_transaction():
     website = get_website()
-    first_row = website.find(id="table_maina").find_next('tbody').find_next('tr')
-    row_entries = first_row.find_all("td")
-    datetime_str = row_entries[1].get_text()
-    transaction_time = datetime.strptime(datetime_str, '%Y-%m-%d %H:%M:%S %Z')
-    transaction_summary = get_transaction_summary(row_entries)
-    return transaction_time, transaction_summary
+    tr = website.find(id="table_maina").find_next('tbody').find_next('tr')
+    td_list = tr.find_all("td")
+    block_number = td_list[0].find_next('a').get_text()
+    amount = td_list[1].find_next('span').get_text()
+    price = td_list[4].get_text().split("@",1)[1]
+    return (block_number, amount + " at" + price)
 
 TELEGRAM_TOKEN =  os.environ.get('TELEGRAM_TOKEN')
 TELEGRAM_CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID')
@@ -35,11 +30,12 @@ BIT_INFO_CHARTS = "https://bitinfocharts.com/bitcoin/address/"
 BITCOIN_ADDRESS = "1LQoWist8KkaUXSPKZHNvEyfrEkPHzSsCd"
 TIME_DELAY = 10 * 60 # every 10 minutes
 
+current_block = webscrap_latest_transaction()[0]+"1"
+
 while(True):
-    current_time = datetime.now()
-    last_run = current_time - timedelta(seconds=TIME_DELAY)
-    transaction_time, transaction_summary = webscrap_latest_transaction()
-    if (last_run <= transaction_time <= current_time):
-        print(transaction_summary)
-        send_message(transaction_summary)
+    latest_block, transaction = webscrap_latest_transaction()
+    if (current_block != latest_block):
+        current_block = latest_block
+        print(transaction)
+        send_message(transaction)
     time.sleep(TIME_DELAY)
