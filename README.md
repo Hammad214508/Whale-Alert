@@ -11,7 +11,7 @@ This script will enable you to track a bitcoin whale's activity by notifying you
   - Uses Blockchain Info API to get real time data for the address' activity on the blockchain.
   - Uses Binance API to get the BTC price at that time.
   - Can easily be used as a cronjob since it doesn't require to store any data, it sends notification based on the timestamp of the transaction.
-  - Will allow to track multiple addresses in a future release
+  - Will allow to track multiple addresses in a future release.
 
 
 ## Setup telegram bot
