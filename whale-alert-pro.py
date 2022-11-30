@@ -34,7 +34,7 @@ while(True):
     if (last_run <= transaction_time <= current_time):
         bitcoin_price = get_bitcoin_price()
         transaction_value = round(abs(float(transaction_result)) * bitcoin_price, 2)
-        transaction_summary = str(transaction_result) + " BTC ($" + str(transaction_value) + ") at $" + str(bitcoin_price)
+        transaction_summary = "{} BTC (${}) at ${}".format(transaction_result, transaction_value, bitcoin_price)
         print(transaction_summary)
         send_message(transaction_summary)
     time.sleep(TIME_DELAY)
